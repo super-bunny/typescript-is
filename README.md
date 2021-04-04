@@ -137,6 +137,7 @@ There are some options to configure the transformer.
 | `ignoreFunctions` *(deprecated, use `functionBehavior` instead)* | Boolean (default: `false`). If `true`, when the transformer encounters a function, it will ignore it and simply return `true`. If `false`, an error is generated at compile time. |
 | `functionBehavior` | One of `error`, `ignore`, or `basic` (default: `error`). Determines the behavior of transformer when encountering a function. `error` will cause a compile-time error, `ignore` will cause the validation function to always return `true`, and `basic` will do a simple function-type-check. Overrides `ignoreFunctions`. |
 | `disallowSuperfluousObjectProperties` | Boolean (default: `false`). If `true`, objects are checked for having superfluous properties and will cause the validation to fail if they do. If `false`, no check for superfluous properties is made. |
+| `disallowSuperfluousObjectProperties` | Boolean (default: `false`). If `true`, the validation will ignore `undefined` value for optional object properties. If `false`, the validation will fail if optional object property has `undefined` value. |
 
 If you are using `ttypescript`, you can include the options in your `tsconfig.json`:
 
