@@ -31,7 +31,8 @@ const visitorContext: PartialVisitorContext = {
         ignoreClasses: false,
         ignoreMethods: true,
         functionBehavior: 'error',
-        disallowSuperfluousObjectProperties: false
+        disallowSuperfluousObjectProperties: false,
+        allowOptionalPropertiesUndefinedValue: false
     },
     typeMapperStack: [],
     // mode: { type: 'type-check' },

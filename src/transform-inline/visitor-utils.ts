@@ -491,6 +491,12 @@ export function createDisjunctionFunction(functionNames: string[], functionName:
 
 export function createStrictNullCheckStatement(identifier: ts.Identifier, visitorContext: VisitorContext) {
     if (visitorContext.compilerOptions.strictNullChecks !== false) {
+        if (visitorContext.options.allowOptionalPropertiesUndefinedValue) {
+            return ts.createIf(
+                ts.createStrictEquality(identifier, ts.createIdentifier('undefined')),
+                ts.createReturn(ts.createNull())
+            );
+        }
         return ts.createEmptyStatement();
     } else {
         return ts.createIf(
